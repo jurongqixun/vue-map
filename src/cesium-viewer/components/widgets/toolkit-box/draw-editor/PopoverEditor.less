@@ -1,0 +1,154 @@
+.cesium-widget-popover-editor {
+    position: static;
+    width: 400px;
+    height: auto;
+    display: block;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+    background-color: #fff;
+    border-radius: 2px;
+    z-index: 999;
+
+    .arrow {
+        position: absolute;
+        display: block;
+        width: 1rem;
+        height: .5rem;
+        margin: 0 .3rem;
+    }
+
+    &[x-placement='top'] > .arrow {
+        bottom: calc((.5rem + 1px) * -1);
+    }
+
+    &[x-placement='bottom'] > .arrow {
+        top: calc((.5rem + 1px) * -1);
+    }
+
+    &[x-placement='left'] > .arrow {
+        right: calc((.5rem + 1px) * -1);
+    }
+
+    &[x-placement='right'] > .arrow {
+        left: calc((.5rem + 1px) * -1);
+    }
+
+    .cesium-widget-popover-editor-title {
+        font-size: 12px;
+        height: 28px;
+        line-height: 28px;
+        color: rgb(76, 76, 76);
+        border-bottom: 1px solid #ccc;
+        padding: 5px 4px;
+
+        > i {
+            padding-left: 6px;
+            padding-right: 3px;
+        }
+
+        > button {
+            font-size: 14px;
+            color: rgb(76, 76, 76);
+            float: right;
+            display: block;
+            border: 0;
+            outline: 0;
+            line-height: 25px;
+            background-color: transparent;
+
+            &:hover {
+                color: #3d6dcc;
+            }
+        }
+    }
+
+    .cesium-widget-popover-editor-button {
+        text-align: right;
+        line-height: 22px;
+        color: rgb(76, 76, 76);
+        border-top: 1px solid #ccc;
+        padding: 5px 4px;
+        vertical-align: middle;
+
+        button {
+            font-size: 12px;
+            line-height: 16px;
+            border: 1px solid #cbcbcb;
+            border-radius: 2px;
+            background-color: #efefef;
+            margin: 2px 3px;
+        }
+    }
+
+    .cesium-widget-popover-editor-content {
+        padding: 10px;
+
+        table {
+            font-size: 12px;
+
+            tr {
+                margin: 0;
+                padding: 10px;
+
+                th {
+                    font-size: 12px;
+                    font-weight: 600;
+                    text-align: right;
+                    width: 120px;
+                    vertical-align: top;
+                    padding-top: 3px;
+                }
+
+                td {
+                    width: 260px;
+                }
+            }
+        }
+
+        input, textarea {
+            resize: none;
+            border: 1px solid #ccc;
+            font-size: 12px;
+            line-height: 16px;
+            outline: 0;
+            width: 100%;
+            margin: 0;
+            padding: 2px 3px;
+
+            &:focus {
+                border-color: #3d6dcc;
+            }
+        }
+
+        button {
+            font-size: 12px;
+            line-height: 16px;
+            border: 1px solid #cbcbcb;
+            border-radius: 2px;
+            //background-color: #efefef;
+            background: linear-gradient(top, #fff, #efefef);
+        }
+
+        .scroll-selector {
+            width: 260px;
+
+            .scroll-selector-content {
+                width: auto;
+                text-wrap: none;
+            }
+
+            img {
+                border: 1px solid #fff;
+                border-radius: 3px;
+                float: left;
+                display: block;
+                margin: 1px 5px;
+                cursor: pointer;
+
+                &:hover,
+                &.active {
+                    border: 1px solid #3d6dcc;
+                }
+            }
+        }
+    }
+}

@@ -1,17 +1,17 @@
-.DS_Store
-node_modules
-/dist
+/dist/
+/node_modules/
+/.vscode/
+/.idea/
 
 # local env files
 .env.local
 .env.*.local
 
 # Log files
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+*.log*
 
 # Editor directories and files
+.DS_Store
 .idea
 .vscode
 *.suo
@@ -19,3 +19,14 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+
+# for example
+/local-map-serve/1/
+/local-map-serve/2/
+/local-map-serve/3/
+/local-map-serve/4/
+/local-map-serve/5/
+/local-map-serve/6/
+/local-map-serve/7/
+/local-map-serve/8/
+/local-map-serve/9/

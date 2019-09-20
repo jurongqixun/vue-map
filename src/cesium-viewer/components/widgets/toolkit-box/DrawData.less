@@ -1,0 +1,80 @@
+.cesium-widget-toolkit-box-drop-draw-data {
+    font-size: 12px;
+    color: #4c4c4c;
+
+    .cesium-widget-toolkit-box-drop-draw-data-items {
+        border-bottom: 1px solid #ccc;
+        overflow-x: scroll;
+        height: 100px;
+
+        ul.cesium-widget-toolkit-box-drop-draw-data-item {
+            height: 22px;
+            margin: 0 18px 0 10px;
+            padding: 0;
+            list-style: none;
+            display: block;
+
+            li {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                display: block;
+                height: 22px;
+                line-height: 22px;
+                width: 100%;
+
+                i {
+                    padding-right: 2px;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: #4c4c4c;
+
+                    &:hover {
+                        color: #3d6dcc;
+                    }
+                }
+
+                > div {
+                    float: right;
+
+                    a {
+                        padding-right: 2px;
+
+                        &:first-child:after {
+                            content: " ";
+                            padding: 0 3px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .cesium-widget-toolkit-box-drop-draw-data-buttons {
+        a {
+            display: block;
+            clear: both;
+            font-size: 12px;
+            text-decoration: none;
+            color: #333;
+            margin: 5px;
+            padding: 5px;
+            border-bottom: 1px dotted #eee;
+
+            &:last-child {
+                border: 0;
+            }
+
+            &:hover {
+                color: #3d6dcc;
+                text-decoration: none;
+            }
+
+            i {
+                margin-right: 5px;
+            }
+        }
+    }
+}

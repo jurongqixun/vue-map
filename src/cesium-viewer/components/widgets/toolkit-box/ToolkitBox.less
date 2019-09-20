@@ -1,0 +1,112 @@
+.cesium-widget-toolkit-box {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    overflow: hidden;
+    z-index: 100;
+
+    > * {
+        user-select: none;
+    }
+
+    .cesium-widget-toolkit-box-buttons {
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        border-radius: 2px;
+        height: 35px;
+        line-height: 35px;
+
+        .splitter {
+            float: left;
+            height: 21px;
+            display: inline-block;
+            border-right: 1px solid #eee;
+            top: 7px;
+            position: relative;
+        }
+
+        .cesium-widget-toolkit-box-button {
+            display: block;
+            color: rgb(76, 76, 76);
+            text-decoration: none;
+            margin: 0 1px 0 1px;
+            padding: 0 8px;
+            float: left;
+            height: 35px;
+            line-height: 35px;
+            font-size: 12px;
+            outline: 0;
+
+            .badge {
+                display: inline-block;
+                min-width: 10px;
+                padding: 2px 3px;
+                font-size: 10px;
+                font-weight: 800;
+                line-height: 1;
+                color: #fff;
+                text-align: center;
+                white-space: nowrap;
+                vertical-align: middle;
+                background-color: #3d6dcc;
+                border-radius: 10px;
+            }
+
+            &:hover {
+                color: #3d6dcc;
+
+                .badge {
+                    background-color: #3d6dcc;
+                }
+            }
+        }
+    }
+
+    .cesium-widget-toolkit-box-drop {
+        clear: both;
+        width: 100%;
+        margin: 2px 0 0 0;
+        padding: 0;
+
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        border-radius: 2px;
+        color: rgb(76, 76, 76);
+
+        &.hide {
+            display: none;
+        }
+
+        &.show {
+            display: block;
+        }
+
+        .cesium-widget-toolkit-box-drop-title {
+            font-size: 12px;
+            height: 28px;
+            line-height: 28px;
+            color: rgb(76, 76, 76);
+            border-bottom: 1px solid #ccc;
+            padding: 5px 4px;
+
+            > i {
+                padding-left: 6px;
+                padding-right: 3px;
+            }
+
+            > button {
+                font-size: 14px;
+                color: rgb(76, 76, 76);
+                float: right;
+                display: block;
+                border: 0;
+                outline: 0;
+                line-height: 25px;
+
+                &:hover {
+                    color: #3d6dcc;
+                }
+            }
+        }
+    }
+}

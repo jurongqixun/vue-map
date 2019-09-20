@@ -1,11 +1,12 @@
 {
   "name": "vue-map",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "local-map-serve": "webpack-dev-server --config ./local-map-serve.webpack.js",
+    "serve-d": "vue-cli-service serve",
+    "build-d": "vue-cli-service build",
+    "serve-p": "vue-cli-service serve --mode production"
   },
   "dependencies": {
     "core-js": "^2.6.5",
@@ -16,9 +17,21 @@
     "@vue/cli-plugin-eslint": "^3.11.0",
     "@vue/cli-service": "^3.11.0",
     "babel-eslint": "^10.0.1",
+    "cesium": "^1.61.0",
+    "cesium-navigation-es6": "^1.0.9",
+    "copy-webpack-plugin": "^5.0.4",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.6.10"
+    "feather-webfont": "^4.22.3",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
+    "popper.js": "^1.15.0",
+    "shp": "0.0.1",
+    "strip-pragma-loader": "^1.0.0",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.8",
+    "webpack-dev-server": "^3.8.0"
   },
   "eslintConfig": {
     "root": true,
@@ -29,7 +42,9 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "rules": {},
+    "rules": {
+      "no-console": "off"
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }

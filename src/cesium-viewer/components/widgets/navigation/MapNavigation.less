@@ -1,0 +1,101 @@
+.cesium-widget-cesiumNavigationContainer {
+    #navigationDiv {
+        .compass {
+            position: absolute;
+            top: inherit;
+            bottom: 105px;
+
+            .compass-outer-ring-background {
+                background-color: transparent;
+            }
+
+            .compass-outer-ring {
+                fill: #fff;
+            }
+
+            .compass-rotation-marker {
+                fill: #3d6dcc;
+            }
+
+            .compass-gyro-background {
+                //background-color: #eee;
+                border-color: #fff;
+            }
+        }
+
+        .navigation-controls {
+            top: initial;
+            bottom: 10px;
+
+            color: rgb(76, 76, 76);
+            background-color: #fff;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 2px;
+
+            .navigation-control,
+            .navigation-control-last {
+                margin: 0;
+                padding: 0;
+
+                div {
+                    color: rgb(76, 76, 76);
+                    font-size: 14px;
+                    font-weight: 800;
+                    display: block;
+                    line-height: 28px;
+                    width: auto;
+                    height: auto;
+                    margin: 0;
+                    padding: 0;
+
+                    &:hover {
+                        color: #3d6dcc;
+                    }
+
+                    svg {
+                        display: none;
+                    }
+                }
+
+                .navigation-control-icon-zoom-in,
+                .navigation-control-icon-reset,
+                .navigation-control-icon-zoom-out {
+                    margin: 0;
+                    padding: 0;
+                    position: initial;
+                    top: initial;
+                    bottom: initial;
+                    left: initial;
+                    right: initial;
+                    text-align: center;
+                    fill: #4c4c4c;
+
+                    i {
+                        margin: 8px auto;
+                        padding: 0;
+                        font-size: 14px;
+                        display: block;
+                        width: 14px;
+                        height: 14px;
+                    }
+                }
+            }
+
+            .navigation-control {
+                border-bottom: 1px solid #eee;
+            }
+        }
+    }
+
+    #distanceLegendDiv {
+        .distance-legend-scale-bar {
+            box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.5);
+        }
+
+        .distance-legend-label {
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+    }
+}

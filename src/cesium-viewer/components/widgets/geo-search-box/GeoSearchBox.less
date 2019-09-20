@@ -1,0 +1,110 @@
+.cesium-widget-search-box-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+}
+
+.cesium-widget-search-box-ctrl {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 2px;
+    color: rgb(76, 76, 76);
+
+    display: block;
+    font-family: Arial, Helvetica, "PingFang SC", "Hiragino Sans GB", STHeiti, sans-serif;
+    font-size: 12px;
+    height: 35px;
+    //pointer-events: none;
+    zoom: 1;
+
+    .cesium-widget-search-box-city,
+    .cesium-widget-search-box-form {
+        float: left;
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .cesium-widget-search-box-city {
+        a {
+            border-right: 1px solid #eee;
+            margin-right: 2px;
+
+            display: block;
+            padding: 0 10px;
+            height: 35px;
+            line-height: 35px;
+            text-decoration: none;
+            color: #333;
+
+            &:hover {
+                color: #3d6dcc;
+            }
+        }
+    }
+
+    .cesium-widget-search-box-form {
+        input {
+            float: left;
+            width: 320px;
+            height: 35px;
+            border: 0;
+            padding: 0 2px;
+            margin: 0;
+            outline: 0;
+            font-size: 12px;
+            line-height: 35px;
+        }
+
+        button {
+            float: left;
+
+            width: 50px;
+            height: 35px;
+            border: 0;
+            padding: 0;
+            margin: 0;
+
+            cursor: pointer;
+            border-radius: 0 2px 2px 0;
+            box-shadow: 1px 2px 1px rgba(0, 0, 0, .15);
+            background-color: #3d6dcc;
+            color: #fff;
+        }
+    }
+}
+
+.cesium-widget-geo-search-box-drop {
+    clear: both;
+    width: 100%;
+    margin: 2px 0 0 0;
+    padding: 0;
+
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 2px;
+    color: rgb(76, 76, 76);
+
+    &.show {
+        display: block;
+    }
+
+    &.hide {
+        display: none;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: block;
+        }
+    }
+}
