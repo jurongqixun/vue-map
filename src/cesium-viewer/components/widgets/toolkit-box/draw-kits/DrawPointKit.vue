@@ -26,9 +26,6 @@
             },
 
             onDrawComplete(viewer, position) {
-                console.log(position);
-                console.log(require('../draw-editor/assets/1.png'));
-
                 viewer.entities.add({
                     position: position,
                     billboard: {
