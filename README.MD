@@ -27,7 +27,7 @@ package.json scripts：
 </template>
 ```
 
-更多的例子请参考 [./src/App.vue]()
+更多的例子请参考 [./src/App.vue](./src/App.vue)
 
 ## useful website
 
