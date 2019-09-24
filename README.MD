@@ -6,11 +6,10 @@ Vue 包装 Cesium 的地图库
 ## npm runs
 
 package.json scripts：
-1. local-data-serve: 本地地图资源的 http 服务。
+1. local-data-serve: 本地地图资源的 http（http://localhost:9090） 服务，用于开发调试。
 2. serve-d: 开发模式的 http 服务
-3. build-d: 发布
+3. build-d: 发布到 dist 目录
 4. serve-p: 产品模式的 http 服务
-5. build-to-java: 发布到 java 项目的 webapp 中。
 
 ## example
 
@@ -28,7 +27,7 @@ package.json scripts：
 </template>
 ```
 
-在开发模式下，需要本地图片资源的支持，请修改 ./local-data.config.js 中的路径，并启动 (1)local-data-serve 脚本
+更多的例子请参考 [./src/App.vue]()
 
 ## useful website
 
