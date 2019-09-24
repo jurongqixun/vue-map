@@ -66,6 +66,8 @@
             </div>
             <ImageryProviderDrop/>
         </div>
+
+        <DrawContainer />
     </div>
 </template>
 
@@ -76,12 +78,13 @@
     import ImageryProviderDrop from "@/cesium-viewer/components/widgets/toolkit-box/ImageryProviderDrop";
     import DrawKits from "@/cesium-viewer/components/widgets/toolkit-box/DrawKits";
     import DrawData from "@/cesium-viewer/components/widgets/toolkit-box/DrawData";
+    import DrawContainer from "@/cesium-viewer/components/widgets/toolkit-box/DrawContainer";
 
     const Fullscreen = cesium.Fullscreen;
 
     export default {
         name: "ToolkitBox",
-        components: {DrawData, DrawKits, ImageryProviderDrop},
+        components: {DrawContainer, DrawData, DrawKits, ImageryProviderDrop},
         mixins: [CesiumWidgetBase],
 
         data() {

@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="cesium-widget-geo-search-box-drop hide" ref="cityDrop">
-            <CityList :cities="this.cityResult" @click="onCityClick"/>
+            <CityList/>
         </div>
         <div class="cesium-widget-geo-search-box-drop hide" ref="searchDrop">
             <ul>
@@ -41,9 +41,9 @@
 <script>
     import './GeoSearchBox.less';
     import cesium from 'cesium/Cesium';
+    import entities from '@/cesium-viewer/util/entities';
     import CesiumWidgetBase from "@/cesium-viewer/components/CesiumWidgetBase";
     import CityList from "@/cesium-viewer/components/widgets/geo-search-box/CityList";
-    //import GeoJson from "@/cesium-viewer/components/geo-search-box/GeoJson";
 
     export default {
         name: "GeoSearchBox",
@@ -95,25 +95,21 @@
                     this.$refs.searchDrop.classList.replace("show", "hide");
                 }
             },
-
-            onSearchResultClick(poi) {
-                this._fly(poi.lng, poi.lat);
-            }
-        },
-
-        data() {
-            return {
-                cityResult: [],
-                searchResult: []
-            };
         },
 
         created() {
-            this.cityResult.push({
-                name: "汕头市",
-                lng: -243.3055400848389,
-                lat: 23.368416790604133,
+            let me = this;
+            this.registerOnReady(function (viewer) {
+                Object.defineProperty(me, 'poiData', {
+                    configurable: true,
+                    value: new entities.DrawEntityCollection(viewer, 'poi')
+                });
             });
+        },
+
+        destoryed() {
+            if (this.poiData)
+                this.poiData.destroy();
         }
     }
 </script>

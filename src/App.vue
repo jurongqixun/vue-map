@@ -1,7 +1,6 @@
 <template>
     <div id="app">
         <CesiumViewer ref="viewer" @ready="ready">
-            <Home locate="true" longitude="111" latitude="35"/>
             <LayerProviders default-imagery-provider="OpenStreetMap">
                 <PlainImageryProvider
                     name="本地" thumbnail-image="http://localhost:9090/logo.png"
@@ -10,6 +9,9 @@
                     name="OpenStreetMap"
                     thumbnail-image="http://localhost:9090/openStreetMap.png"/>
             </LayerProviders>
+
+            <Home locate="true" longitude="111" latitude="35"/>
+            <GeoLocationProvider :custom="this.geoProvide"/>
         </CesiumViewer>
     </div>
 </template>
@@ -21,16 +23,38 @@
     import PlainImageryProvider from "@/cesium-viewer/options/layer-provider/imagery/PlainImageryProvider";
     import OpenStreetMapImageryProvider
         from "@/cesium-viewer/options/layer-provider/imagery/OpenStreetMapImageryProvider";
+    import GeoLocationProvider from "@/cesium-viewer/options/geo/GeoLocationProvider";
+    import entitiesUtil from '@/cesium-viewer/util/entities';
+    import cesium from "cesium/Cesium";
 
     export default {
         name: 'app',
         components: {
+            GeoLocationProvider,
             Home, OpenStreetMapImageryProvider, PlainImageryProvider, LayerProviders, CesiumViewer
         },
 
         methods: {
             ready(viewer) {
 
+            },
+
+            geoProvide(countryCode, callback) {
+                let promise = cesium.GeoJsonDataSource.load(
+                    'http://localhost:9090/poi/ny.json', {clampToGround: true});
+
+                promise.then(function (e) {
+                    let entities = [];
+                    for (let i = 0; i < e.entities.values.length; i++) {
+                        let entity = e.entities.values[i];
+                        entity.polygon.material = cesium.Color.fromRandom();
+                        entity.polygon.outlineColor = entity.polygon.material;
+                        entities.push(new entitiesUtil.PoiAreaEntity(entity));
+                    }
+                    if (callback) callback(entities);
+                }).otherwise(function (e) {
+                    console.error(e);
+                });
             }
         }
     }

@@ -115,11 +115,28 @@ export default class GeoJson {
      * to cesium GeoJsonDataSource
      * @param name name of GeoJsonDataSource
      * @param options options of GeoJsonDataSource
-     * @returns {GeoJsonDataSource} loaded geo-json data source
+     * @returns {Promise}
      */
     toDataSource(name = 'SimpleGeoJson', options = {}) {
         let dataSource = new cesium.GeoJsonDataSource(name);
         return dataSource.load(this.json, options);
+    }
+
+    /**
+     * to cesium entity data from GeoJsonDataSource.load
+     * @param options GeoJsonDataSource options
+     * @param promiseCallback
+     */
+    toDataSourceEntities(options = {}, promiseCallback = () => {}) {
+        let dataSource = new cesium.GeoJsonDataSource();
+        let promise = dataSource.load(this.json, options);
+
+        promise.then(function (dataSource) {
+            let entities = dataSource.entities.values;
+            for (let i = 0; i < entities.length; i++) {
+                promiseCallback(entities[i]);
+            }
+        });
     }
 
     /**

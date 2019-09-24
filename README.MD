@@ -32,4 +32,5 @@ package.json scripts：
 
 ## useful website
 
-1. [http://geojson.io](http://geojson.io) - getjson / topojson, KML, shp 等工具网站
+1. [http://geojson.io](http://geojson.io) - geo json / topo json, KML, shp 等工具网站
+2. [https://mapshaper.org/](https://mapshaper.org/) - convert shp file to geo json, topo json, cvs..
