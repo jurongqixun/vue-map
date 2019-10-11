@@ -1,5 +1,6 @@
 import cesium from 'cesium/Cesium';
-import shp from 'shp';
+//import shp from 'shp';
+import Shapefile from '@inlog/js-shapefile-to-geojson/shapefile'
 
 /**
  * GeoJson 工具类
@@ -10,17 +11,21 @@ export default class GeoJson {
      * @param sourceFile
      * @returns {GeoJson}
      */
-    static fromShpFile(sourceFile) {
-        let geoData = {};
+    static fromShpFile(sourceFile, callback) {
+        // let geoData = {};
+        //
+        // shp.readFileSync(sourceFile, function (error, data) {
+        //     console.log(error);
+        //     console.log(JSON.stringify(data));
+        //
+        //     geoData = data;
+        // });
+        //
+        // return new GeoJson(geoData);
 
-        shp.readFileSync(sourceFile, function (error, data) {
-            console.log(error);
-            console.log(JSON.stringify(data));
-
-            geoData = data;
+        new Shapefile(sourceFile, function (data) {
+            callback(new GeoJson(data.geojson));
         });
-
-        return new GeoJson(geoData);
     }
 
     static fromLngLat(lng, lat, properties = {}) {

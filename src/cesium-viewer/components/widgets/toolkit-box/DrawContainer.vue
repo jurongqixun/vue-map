@@ -1,7 +1,7 @@
 <template>
     <div class="cesium-widget-draw-container">
         <slot/>
-        <MouseTooltip ref="tooltip" />
+        <MouseTooltip ref="tooltip" :show="false" />
     </div>
 </template>
 

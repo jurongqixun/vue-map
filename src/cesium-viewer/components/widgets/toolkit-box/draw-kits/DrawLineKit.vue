@@ -5,6 +5,7 @@
 </template>
 
 <script>
+    //https://www.jianshu.com/p/416d432cd83b
     export default {
         name: "DrawLineKit"
     }

@@ -26,6 +26,7 @@
     import GeoLocationProvider from "@/cesium-viewer/options/geo/GeoLocationProvider";
     import entitiesUtil from '@/cesium-viewer/util/entities';
     import cesium from "cesium/Cesium";
+    import TrafficInfo from './traffic-example/traffic-loader.js';
 
     export default {
         name: 'app',
@@ -36,7 +37,8 @@
 
         methods: {
             ready(viewer) {
-
+                let trafficExample = new TrafficInfo(viewer);
+                trafficExample.load();
             },
 
             geoProvide(countryCode, callback) {

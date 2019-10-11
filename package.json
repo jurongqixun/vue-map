@@ -17,6 +17,7 @@
     "vue": "^2.6.10"
   },
   "devDependencies": {
+    "@inlog/js-shapefile-to-geojson": "^0.1.0",
     "@vue/cli-plugin-babel": "^3.11.0",
     "@vue/cli-plugin-eslint": "^3.11.0",
     "@vue/cli-service": "^3.11.0",
