@@ -18,9 +18,9 @@
   },
   "devDependencies": {
     "@inlog/js-shapefile-to-geojson": "^0.1.0",
-    "@vue/cli-plugin-babel": "^3.11.0",
+    "@vue/cli-plugin-babel": "^5.0.8",
     "@vue/cli-plugin-eslint": "^3.11.0",
-    "@vue/cli-service": "^3.11.0",
+    "@vue/cli-service": "^5.0.8",
     "babel-eslint": "^10.0.1",
     "cesium": "^1.61.0",
     "cesium-navigation-es6": "^1.0.9",
